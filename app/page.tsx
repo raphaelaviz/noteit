@@ -20,44 +20,44 @@ export interface Assistance {
   }[]
 }
 
-const getAllAssistancesData = async () => {
-  const session = await getServerSession(authOptions)
-
-  const assistances = session
-    ? await prisma.assistance.findMany({
-      where: {
-        starter: false,
-        userId: session.user.id,
-      },
-      include: {
-        Category: true,
-      },
-    })
-    : await prisma.assistance.findMany({
-      where: { starter: true },
-      include: { Category: true },
-    })
-
-  return assistances
-}
-
-const getCategories = async () => {
-  const session = await getServerSession(authOptions)
-
-  const categories = session
-    ? await prisma.category.findMany({
-      where: {
-        OR: [{ userId: null }, { userId: session.user.id }],
-      },
-    })
-    : await prisma.category.findMany({
-      where: { userId: null },
-    })
-
-  return categories
-}
-
 export default async function Container() {
+
+  const getAllAssistancesData = async () => {
+    const session = await getServerSession(authOptions)
+  
+    const assistances = session
+      ? await prisma.assistance.findMany({
+        where: {
+          starter: false,
+          userId: session.user.id,
+        },
+        include: {
+          Category: true,
+        },
+      })
+      : await prisma.assistance.findMany({
+        where: { starter: true },
+        include: { Category: true },
+      })
+  
+    return assistances
+  }
+  
+  const getCategories = async () => {
+    const session = await getServerSession(authOptions)
+  
+    const categories = session
+      ? await prisma.category.findMany({
+        where: {
+          OR: [{ userId: null }, { userId: session.user.id }],
+        },
+      })
+      : await prisma.category.findMany({
+        where: { userId: null },
+      })
+  
+    return categories
+  }
 
   const allAssistancesData = await getAllAssistancesData()
   const allCategoriesData = await getCategories()
