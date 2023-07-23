@@ -152,7 +152,7 @@ const NewAssistanceModal: React.FC<NewAssistanceModalProps> = ({
       </form>
       {/* daisyUI component to make the modal close when clicked outside */}
       <form method="dialog" className="modal-backdrop">
-        <button className="cursor-auto" />
+        <button id='close_modal' className="cursor-auto" />
       </form>
     </dialog>
   )

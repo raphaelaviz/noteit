@@ -40,10 +40,11 @@ export const DeleteAssistanceModal: React.FC<DeleteAssistanceModalProps> = ({
           assistance from our servers.
         </p>
         <div className="modal-action">
-          <button className="btn">
+          <button id="cancel" className="btn">
             Cancel
           </button>
           <button
+            id='delete_assistance'
             onClick={handleDeleteAssistance}
             className="btn bg-red-200 text-red-500"
           >
