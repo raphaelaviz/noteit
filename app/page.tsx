@@ -1,10 +1,9 @@
 import Panel from './components/Panel'
-import { Session, getServerSession } from 'next-auth'
+import { getServerSession } from 'next-auth'
 import { authOptions } from './api/auth/[...nextauth]/route'
 import prisma from '@/prisma/prisma'
 import NewAssistanceButton from './components/NewAssistanceButton'
 import NewAssistanceModal from './components/NewAssistanceModal'
-import {FC} from 'react'
 
 export interface Category {
   id: string
@@ -21,8 +20,44 @@ export interface Assistance {
   }[]
 }
 
+const getAllAssistancesData = async () => {
+  const session = await getServerSession(authOptions)
 
-const Container: FC = async () => {
+  const assistances = session
+    ? await prisma.assistance.findMany({
+      where: {
+        starter: false,
+        userId: session.user.id,
+      },
+      include: {
+        Category: true,
+      },
+    })
+    : await prisma.assistance.findMany({
+      where: { starter: true },
+      include: { Category: true },
+    })
+
+  return assistances
+}
+
+const getCategories = async () => {
+  const session = await getServerSession(authOptions)
+
+  const categories = session
+    ? await prisma.category.findMany({
+      where: {
+        OR: [{ userId: null }, { userId: session.user.id }],
+      },
+    })
+    : await prisma.category.findMany({
+      where: { userId: null },
+    })
+
+  return categories
+}
+
+const Container: React.FC = async () => {
 
   const allAssistancesData = await getAllAssistancesData()
   const allCategoriesData = await getCategories()
@@ -44,40 +79,3 @@ const Container: FC = async () => {
 }
 
 export default Container
-
-export async function getAllAssistancesData() {
-  const session = await getServerSession(authOptions)
-
-  const assistances = session
-    ? await prisma.assistance.findMany({
-      where: {
-        starter: false,
-        userId: session.user.id,
-      },
-      include: {
-        Category: true,
-      },
-    })
-    : await prisma.assistance.findMany({
-      where: { starter: true },
-      include: { Category: true },
-    })
-
-  return assistances
-}
-
-export async function getCategories() {
-  const session = await getServerSession(authOptions)
-
-  const categories = session
-    ? await prisma.category.findMany({
-      where: {
-        OR: [{ userId: null }, { userId: session.user.id }],
-      },
-    })
-    : await prisma.category.findMany({
-      where: { userId: null },
-    })
-
-  return categories
-}
