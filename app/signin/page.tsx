@@ -33,7 +33,9 @@ const SignIn = () => {
                             />
                             <h1 className="text-5xl font-bold mb-4">Sign in</h1>
                             </div>
-                            <button className="flex-center signin-field p-2 transition-transform hover:scale-110"
+                            <button
+                                id='signin_google' 
+                                className="flex-center signin-field p-2 transition-transform hover:scale-110"
                                 onClick={() => signIn('google', { callbackUrl: 'http://localhost:3000' })}
                             >
                                 Continue with Google
@@ -41,7 +43,9 @@ const SignIn = () => {
                                     <FcGoogle className="text-2xl ml-2" />
                                 </span>
                             </button>
-                            <button className="flex-center signin-field p-2 transition-transform hover:scale-110"
+                            <button
+                                id='signin_github' 
+                                className="flex-center signin-field p-2 transition-transform hover:scale-110"
                                 onClick={() => signIn('github', { callbackUrl: 'http://localhost:3000' })}
                             >
                                 Continue with Github
