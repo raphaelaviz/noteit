@@ -2,26 +2,59 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.border-primary {
+  @apply border-2 border-r-4 border-b-4 border-gray-800;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.border-secondary {
+  @apply border-2 border-b-[3px] border-r-[3px] border-gray-800;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.flex-center {
+  @apply flex justify-center items-center
+}
+
+.signin-field {
+  @apply w-3/5 border-2 border-gray-800 border-r-4 border-b-[3px] rounded-md
+}
+
+.signin-container {
+  @apply border-2 border-gray-800 border-r-8 border-b-4 md:w-3/5 w-full h-[600px] bg-gray-50 flex mt-5
+}
+
+.assistances-grid {
+  @apply grid min-h-screen grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-12 p-8
+}
+
+.assistance-card {
+  @apply relative flex-center h-64 w-64 flex-col 
+  border-[3px] border-b-[6px] border-r-[6px] border-gray-800 text-center
+  text-gray-800 transition-transform hover:scale-105
+}
+
+.pill-button {
+  @apply flex-shrink-0 rounded-full border-primary px-4 py-2
+  text-gray-800
+}
+
+
+.my-scrollable-div::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+.my-scrollable-div::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.my-scrollable-div::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+.my-scrollable-div:hover::-webkit-scrollbar-thumb {
+  background: #e6d9d9;
+}
+
+.my-scrollable-div:hover::-webkit-scrollbar-thumb:hover {
+  background: #8b8989;
 }
