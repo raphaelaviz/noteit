@@ -19,7 +19,7 @@
 }
 
 .signin-container {
-  @apply border-2 border-gray-800 border-r-8 border-b-4 md:w-3/5 w-full h-[600px] bg-gray-50 flex mt-5
+  @apply border-2 border-gray-800 border-r-8 border-b-4 md:w-3/5 w-full h-[600px] bg-gray-50 flex mt-5 mb-5
 }
 
 .assistances-grid {

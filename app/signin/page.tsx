@@ -12,7 +12,7 @@ import signin_image from '../../public/signin_image.webp'
 const SignIn = () => {
 
     return (
-        <div className="flex-center w-full h-max space-x-32 bg-gray-200">
+        <div className="flex-center w-full h-full space-x-32 bg-gray-200">
             <div className="signin-container">
                 <div className="w-2/5 relative border-r-4 border-gray-800 md:block hidden">
                     <Image

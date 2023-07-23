@@ -24,8 +24,6 @@ pnpm dev
 - [ ] Implement Metadata in the signin page.
 - [ ] Fix Github login.
 - [ ] Favicon
-- [ ] Task 2
-- [ ] Task 3
 
 ## Next features
 
