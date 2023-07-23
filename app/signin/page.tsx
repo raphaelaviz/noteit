@@ -1,23 +1,13 @@
 'use client'
 
-import Link from "next/link";
+
 import { FcGoogle } from 'react-icons/fc'
 import { FaGithub } from 'react-icons/fa'
 import { signIn } from "next-auth/react";
-import { useRouter } from "next/navigation";
 import Image from "next/image";
 import logo from '../../public/noteit_logo.png'
 import signin_image from '../../public/signin_image.png'
-import { Metadata } from "next";
-
-
-export const metadata: Metadata = {
-    title: "NoteIT Log in Page",
-    description: "Your most important IT notes in one place.",
-    
-  }
   
-
 
 const SignIn = () => {
 
