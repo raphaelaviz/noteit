@@ -133,6 +133,7 @@ const NewAssistanceModal: React.FC<NewAssistanceModalProps> = ({
         )}
         <div className="flex justify-end">
           <button
+            aria-label="submit"
             type="submit"
             className="mt-4 rounded border-2 border-slate-500 px-4 py-2 text-slate-800"
             disabled={
@@ -152,7 +153,7 @@ const NewAssistanceModal: React.FC<NewAssistanceModalProps> = ({
       </form>
       {/* daisyUI component to make the modal close when clicked outside */}
       <form method="dialog" className="modal-backdrop">
-        <button id='close_modal_button' className="cursor-auto" />
+        <button aria-label="close-modal" className="cursor-auto" />
       </form>
     </dialog>
   )

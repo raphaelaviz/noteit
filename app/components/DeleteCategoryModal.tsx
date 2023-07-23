@@ -38,11 +38,11 @@ export const DeleteCategoryModal: React.FC<DeleteCategoryModalProps> = ({
           the category as well?
         </p>
         <div className="modal-action">
-          <button id="keep_category" onClick={handleKeepCategory} className="btn">
+          <button aria-label="keep-category" onClick={handleKeepCategory} className="btn">
             Keep the Category
           </button>
           <button
-            id="delete_category"
+            aria-label="delete-category"
             onClick={handleDeleteCategory}
             className="btn bg-red-200 text-red-500"
           >

@@ -11,7 +11,7 @@ export const DeleteAssistanceButton = () => {
       data-tip="Delete Assistance"
     >
       <button
-        id='delete_assistance'
+        aria-label='delete-assistance'
         className="flex-center rounded-md border-secondary bg-red-500 p-3
                   text-2xl text-white transition-transform hover:scale-110 "
         onClick={() => modal_delete_assistance.showModal()}

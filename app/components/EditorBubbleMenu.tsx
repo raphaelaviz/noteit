@@ -56,6 +56,7 @@ export default EditorBubbleMenu
 export function BubbleButton(props: BubbleButtonProps) {
   return (
     <button
+      aria-label="bubble-button"
       className={
         'flex-center h-12 w-12 rounded-full text-sm text-gray-700 hover:text-zinc-50 data-[active=true]:border-2 data-[active=true]:border-gray-700'
       }

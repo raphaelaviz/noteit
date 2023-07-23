@@ -34,7 +34,7 @@ const SignIn = () => {
                             <h1 className="text-5xl font-bold mb-4">Sign in</h1>
                             </div>
                             <button
-                                id='signin_google' 
+                                aria-label="signin-google" 
                                 className="flex-center signin-field p-2 transition-transform hover:scale-110"
                                 onClick={() => signIn('google', { callbackUrl: 'http://localhost:3000' })}
                             >
@@ -44,7 +44,7 @@ const SignIn = () => {
                                 </span>
                             </button>
                             <button
-                                id='signin_github' 
+                                aria-label="signin-github" 
                                 className="flex-center signin-field p-2 transition-transform hover:scale-110"
                                 onClick={() => signIn('github', { callbackUrl: 'http://localhost:3000' })}
                             >

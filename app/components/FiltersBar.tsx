@@ -21,6 +21,7 @@ const FiltersBar: React.FC<FiltersBarProps> = ({
       <div className="flex justify-between divide-x-2 divide-gray-600 p-4">
         <div className="my-scrollable-div mr-4 flex space-x-3 overflow-x-auto">
           <button
+            aria-label="filter-button"
             style={{ backgroundColor: '#d6d6cd', minWidth: '120px' }}
             onClick={() => handleCategoryClick(null)}
             className={`pill-button ${selectedCategoryFilter === null ? 'border-black font-extrabold' : ''}`}
@@ -30,6 +31,7 @@ const FiltersBar: React.FC<FiltersBarProps> = ({
 
           {categories.map((category: Category) => (
             <button
+              aria-label="filter-button"
               key={category.id}
               style={{ backgroundColor: category.color, minWidth: '80px' }}
               onClick={() => handleCategoryClick(category.id)}

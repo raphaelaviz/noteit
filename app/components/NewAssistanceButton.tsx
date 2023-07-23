@@ -1,8 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { signIn, useSession } from 'next-auth/react'
-import { useRouter } from 'next/navigation'
+import { signIn } from 'next-auth/react'
 import { ImPlus } from 'react-icons/im'
 import localFont from 'next/font/local'
 import { Session } from 'next-auth'
@@ -36,7 +35,7 @@ const NewAssistanceButton: React.FC<NewAssistanceButtonProps> = ({ session }) =>
       style={{ transition: '0.5s' }}
     >
       <button
-        id="new_assistance_button"
+        aria-label="new-assistance-button"
         className="flex-center absolute h-full cursor-pointer text-4xl text-white"
         onClick={handleClick}
       >

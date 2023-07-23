@@ -121,7 +121,7 @@ const Editor: React.FC<EditorProps> = ({ assistance }) => {
           {isEditorEditable ? (
             <div className="tooltip tooltip-top" data-tip="Lock Content">
               <button
-                id="lock_content"
+                aria-label="lock-content"
                 onClick={() => {
                   setIsEditorEditable(false)
                   editor!.setEditable(false)
@@ -134,7 +134,7 @@ const Editor: React.FC<EditorProps> = ({ assistance }) => {
           ) : (
             <div className="tooltip tooltip-top" data-tip="Unlock Content">
               <button
-                id="unlock_content"
+                aria-label="unlock-content"
                 onClick={() => {
                   setIsEditorEditable(true)
                   editor!.setEditable(true)
@@ -148,7 +148,7 @@ const Editor: React.FC<EditorProps> = ({ assistance }) => {
 
           <div className="tooltip tooltip-top" data-tip="Save Content">
             <button
-              id="save_content"
+              aria-label="save-content"
               onClick={handleSaveButton}
               className={
                 'rounded-md border-secondary p-2 text-3xl transition-transform hover:scale-110'

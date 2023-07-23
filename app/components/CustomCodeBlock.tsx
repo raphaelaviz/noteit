@@ -32,6 +32,7 @@ export const CustomCodeBlock = CodeBlockLowlight.extend({
       root.render(
         
         <button
+          aria-label='copy-content'
           onClick={(event) => {
               event.stopPropagation()
               const codeText = content.textContent || ''

@@ -24,6 +24,7 @@ const LogButton = ({ session }: LogButtonProps) => {
             className="w-10 rounded-full mr-3"
           />
           <button
+            aria-label="signout-button"
             className="border-primary rounded-md p-3 transition-transform hover:scale-110 bg-gray-50"
             onClick={() => signOut({ callbackUrl: '/' })}
           >
@@ -32,7 +33,11 @@ const LogButton = ({ session }: LogButtonProps) => {
         </>
       ) : (
 
-        <button className="border-primary rounded-md p-3 transition-transform hover:scale-110 bg-gray-50" onClick={() => signIn()}>
+        <button 
+          aria-label="signin-button"
+          className="border-primary rounded-md p-3 transition-transform hover:scale-110 bg-gray-50"
+          onClick={() => signIn()}
+        >
           Sign In
         </button>
       )}

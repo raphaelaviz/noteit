@@ -150,6 +150,7 @@ export default EditorFloatingMenu
 export function FloatingButton(props: FloatingButtonProps) {
   return (
     <button
+      aria-label="floating-button"
       className="flex items-center gap-2 rounded p-1 hover:bg-zinc-200"
       {...props}
     />
