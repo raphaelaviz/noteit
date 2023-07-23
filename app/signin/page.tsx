@@ -8,11 +8,18 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import logo from '../../public/noteit_logo.png'
 import signin_image from '../../public/signin_image.png'
+import { Metadata } from "next";
 
-export interface pageProps {
-}
 
-const SignIn = (props: pageProps) => {
+export const metadata: Metadata = {
+    title: "NoteIT Log in Page",
+    description: "Your most important IT notes in one place.",
+    
+  }
+  
+
+
+const SignIn = () => {
 
     return (
         <div className="flex-center w-full h-max space-x-32 bg-gray-200">
