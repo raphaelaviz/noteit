@@ -3,7 +3,7 @@ import { getServerSession } from 'next-auth'
 import { authOptions } from '../api/auth/[...nextauth]/route'
 import LogButton from './LogButton'
 import Image from 'next/image'
-import logo from '../../public/noteit_logo.png'
+import logo from '../../public/noteit_logo.webp'
 
 const Header: React.FC = async () => {
   const session = await getServerSession(authOptions)

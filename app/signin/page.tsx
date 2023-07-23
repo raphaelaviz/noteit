@@ -5,8 +5,8 @@ import { FcGoogle } from 'react-icons/fc'
 import { FaGithub } from 'react-icons/fa'
 import { signIn } from "next-auth/react";
 import Image from "next/image";
-import logo from '../../public/noteit_logo.png'
-import signin_image from '../../public/signin_image.png'
+import logo from '../../public/noteit_logo.webp'
+import signin_image from '../../public/signin_image.webp'
   
 
 const SignIn = () => {
