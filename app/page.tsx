@@ -57,7 +57,7 @@ const getCategories = async () => {
   return categories
 }
 
-const Container: React.FC = async () => {
+export default async function Container() {
 
   const allAssistancesData = await getAllAssistancesData()
   const allCategoriesData = await getCategories()
@@ -77,5 +77,3 @@ const Container: React.FC = async () => {
     </div>
   )
 }
-
-export default Container
