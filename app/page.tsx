@@ -4,6 +4,7 @@ import { authOptions } from './api/auth/[...nextauth]/route'
 import prisma from '@/prisma/prisma'
 import NewAssistanceButton from './components/NewAssistanceButton'
 import NewAssistanceModal from './components/NewAssistanceModal'
+import {FC} from 'react'
 
 export interface Category {
   id: string
@@ -57,7 +58,7 @@ export async function getCategories() {
   return categories
 }
 
-const Container: React.FC = async () => {
+const Container: FC = async () => {
 
   const allAssistancesData = await getAllAssistancesData()
   const allCategoriesData = await getCategories()
