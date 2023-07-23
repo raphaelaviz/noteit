@@ -21,6 +21,30 @@ export interface Assistance {
   }[]
 }
 
+
+const Container: FC = async () => {
+
+  const allAssistancesData = await getAllAssistancesData()
+  const allCategoriesData = await getCategories()
+  const session = await getServerSession(authOptions)
+
+  return (
+    <div>
+      <Panel
+        assistancesProp={allAssistancesData}
+        categories={allCategoriesData}
+      />
+      <NewAssistanceButton session={session} />
+      <NewAssistanceModal
+        categoriesProp={allCategoriesData}
+        session={session}
+      />
+    </div>
+  )
+}
+
+export default Container
+
 export async function getAllAssistancesData() {
   const session = await getServerSession(authOptions)
 
@@ -57,26 +81,3 @@ export async function getCategories() {
 
   return categories
 }
-
-const Container: FC = async () => {
-
-  const allAssistancesData = await getAllAssistancesData()
-  const allCategoriesData = await getCategories()
-  const session = await getServerSession(authOptions)
-
-  return (
-    <div>
-      <Panel
-        assistancesProp={allAssistancesData}
-        categories={allCategoriesData}
-      />
-      <NewAssistanceButton session={session} />
-      <NewAssistanceModal
-        categoriesProp={allCategoriesData}
-        session={session}
-      />
-    </div>
-  )
-}
-
-export default Container
