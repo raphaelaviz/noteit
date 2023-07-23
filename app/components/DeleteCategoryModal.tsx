@@ -30,9 +30,9 @@ export const DeleteCategoryModal: React.FC<DeleteCategoryModalProps> = ({
   return (
     <dialog id="modal_delete_category" className="modal modal-bottom sm:modal-middle">
       <form method="dialog" className="modal-box">
-        <h3 className="text-lg font-bold">
+        <h1 className="text-lg font-bold">
           This was the last one.
-        </h3>
+        </h1>
         <p className="py-4">
           This was the last assistance in the category. Do you wish to delete
           the category as well?

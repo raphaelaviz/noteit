@@ -32,9 +32,9 @@ export const DeleteAssistanceModal: React.FC<DeleteAssistanceModalProps> = ({
     <dialog id="modal_delete_assistance" className="modal modal-bottom sm:modal-middle">
       <DeleteCategoryModal categoryToDelete={assistance.categoryId} />
       <form method="dialog" className="modal-box">
-        <h3 className="text-lg font-bold">
+        <h1 className="text-lg font-bold">
           Are you absolutely sure?
-        </h3>
+        </h1>
         <p className="py-4">
           This action can not be undone. This will permanently delete the
           assistance from our servers.
@@ -44,7 +44,7 @@ export const DeleteAssistanceModal: React.FC<DeleteAssistanceModalProps> = ({
             Cancel
           </button>
           <button
-            id='delete_assistance'
+            id='confirm_delete'
             onClick={handleDeleteAssistance}
             className="btn bg-red-200 text-red-500"
           >

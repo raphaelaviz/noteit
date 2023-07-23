@@ -36,7 +36,7 @@ const NewAssistanceButton: React.FC<NewAssistanceButtonProps> = ({ session }) =>
       style={{ transition: '0.5s' }}
     >
       <button
-        id="new_assistance"
+        id="new_assistance_button"
         className="flex-center absolute h-full cursor-pointer text-4xl text-white"
         onClick={handleClick}
       >
