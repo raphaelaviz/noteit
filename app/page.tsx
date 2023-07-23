@@ -57,7 +57,7 @@ export async function getCategories() {
   return categories
 }
 
-const Container = async () => {
+const Container: React.FC = async () => {
 
   const allAssistancesData = await getAllAssistancesData()
   const allCategoriesData = await getCategories()
