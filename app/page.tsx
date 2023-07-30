@@ -4,7 +4,7 @@ import { authOptions } from './api/auth/[...nextauth]/route'
 import prisma from '@/prisma/prisma'
 import NewAssistanceButton from './components/NewAssistanceButton'
 import NewAssistanceModal from './components/NewAssistanceModal'
-import { Metadata } from 'next'
+
 
 export interface Category {
   id: string
@@ -21,13 +21,6 @@ export interface Assistance {
   }[]
 }
 
-export const metadata: Metadata = {
-  title: "NoteIT Dashboard",
-  description: "Your most important IT notes in one place.",
-  alternates: {
-    canonical: "https://noteit-nu.vercel.app/"
-  }
-}
 
 
 export default async function Container() {

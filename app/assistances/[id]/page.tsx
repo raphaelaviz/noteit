@@ -3,23 +3,10 @@ import { DeleteAssistanceButton } from '@/app/components/DeleteAssistanceButton'
 import { DeleteAssistanceModal } from '@/app/components/DeleteAssistanceModal'
 import Editor from '@/app/components/Editor'
 import { myFont } from '@/app/layout'
-import { Metadata } from 'next'
+
 import { getServerSession } from 'next-auth'
 
 
-export async function generateMetadata (
-  { params }: { params: { id: string } }):Promise<Metadata> {
-      const assistance = await getSingleAssistanceData(params.id)
-      if (!assistance) return {
-        title: "Not found",
-        description: "ID didn't match any assistance."
-      }
-      return {
-        title: assistance.name + " notes",
-        description: assistance.name,
-      } 
-  
-}
 
 const getSingleAssistanceData = async (id: string) => {
   const response = await fetch(`${process.env.API_ENDPOINT}/${id}`, {
