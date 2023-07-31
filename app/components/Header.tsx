@@ -16,6 +16,7 @@ const Header: React.FC = async () => {
           width={240}
           src={logo} alt={'logo'}
           className='py-1'
+          priority={true}
         />
       </Link>
       <LogButton session={session} />

@@ -8,7 +8,7 @@ export const myFont = localFont({ src: '../public/american_captain.ttf' })
 
 
 export const metadata: Metadata = {
-  title: "NoteIT Dashboard",
+  title: "NoteIT",
   description: "Your most important IT notes in one place.",
   alternates: {
     canonical: "https://noteit-nu.vercel.app/"

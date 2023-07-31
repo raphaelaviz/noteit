@@ -24,22 +24,22 @@ const ColorPickerGrid = ({
 )
 
 const colors = [
-  '#FFB6C1',
-  '#FFD700',
+  '#aaaaaa',
   '#F0E68C',
-  '#ADFF2F',
+  '#FFD700',
+  '#bcfa60',
   '#00FF7F',
-  '#20B2AA',
   '#87CEFA',
-  '#0000FF',
-  '#8A2BE2',
+  '#66abe7',
+  '#20B2AA',
+  '#FFB6C1',
   '#D8BFD8',
   '#DDA0DD',
-  '#FF00FF',
-  '#FF4500',
-  '#DB7093',
-  '#F5DEB3',
-  '#7B68EE',
+  '#c362c3',
+  '#f7855b',
+  '#ef6815',
+  '#ed6565',
+  '#5850f3',
 ]
 
 export default ColorPickerGrid

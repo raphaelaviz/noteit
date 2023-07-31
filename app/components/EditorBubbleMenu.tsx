@@ -42,7 +42,7 @@ const EditorBubbleMenu: React.FC<EditorBubbleMenuProps> = ({ editor }) => (
     </BubbleButton>
 
     <BubbleButton
-      onClick={() => editor.commands.toggleHighlight({ color: '#74c0fc' })}
+      onClick={() => editor.commands.toggleHighlight({ color: '#f6f62f' })}
       data-active={editor.isActive('highlight')}
       style={{ backgroundColor: '#F6D6AD' }}
     >
