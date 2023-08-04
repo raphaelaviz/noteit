@@ -26,8 +26,10 @@ const ColorPickerGrid = ({
 const colors = [
   '#aaaaaa',
   '#F0E68C',
+  '#dfff60',
   '#FFD700',
   '#bcfa60',
+  '#60ffa7',
   '#00FF7F',
   '#87CEFA',
   '#66abe7',
