@@ -10,7 +10,7 @@ import { getServerSession } from 'next-auth'
 
 const getSingleAssistanceData = async (id: string) => {
   const response = await fetch(`${process.env.API_ENDPOINT}/${id}`, {
-    cache: 'no-store',
+    next: { revalidate: 1 },
   })
   if (!response.ok) {
     throw new Error('Failed to fetch data')

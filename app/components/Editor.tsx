@@ -26,6 +26,7 @@ import { useSession } from 'next-auth/react'
 import {Toaster} from 'react-hot-toast'
 import { updateAssistance } from '../utis'
 
+
 lowlight.registerLanguage('html', html)
 lowlight.registerLanguage('css', css)
 lowlight.registerLanguage('js', js)
@@ -36,12 +37,13 @@ interface EditorProps {
 }
 
 const Editor: React.FC<EditorProps> = ({ assistance }) => {
-
+  
+  
   const { data: session } = useSession()
   const [isEditorEditable, setIsEditorEditable] = useState(
     !assistance.editorContent,
-  )
-
+    )
+    
   const [saveButtonClick, setSaveButtonClick] = useState(false)
 
   const editorConfig = {
@@ -96,6 +98,7 @@ const Editor: React.FC<EditorProps> = ({ assistance }) => {
       if (!response.ok) {
         console.error('Failed to save editor content')
       }
+      
       router.refresh()
     }
   }
